@@ -17,6 +17,7 @@
 
   <li  *ngFor="let hero of heros">
     <a routerLink="/detail/{{ hero.id }}">
+      <!-- 會等於router /detail/:id 以利於後續router倒到heroes-drtail-->
       <span class="badge">{{ hero.id }}</span> {{ hero.name }}
     </a>
   </li>

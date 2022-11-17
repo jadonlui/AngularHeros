@@ -13,6 +13,7 @@ const routes: Routes = [
 //of 將物件轉成observable
 @NgModule({
   // 把我們宣告的東西註冊到路由上面
+  declarations:[],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })

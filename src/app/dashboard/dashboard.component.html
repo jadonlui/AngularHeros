@@ -2,6 +2,7 @@
 <div class="heroes-menu">
   <a *ngFor="let hero of heroes"
     routerLink="/detail/{{hero.id}}">
+    <!-- 讓dashboard 游標選擇或是放上面時有讀到:id -->
     {{hero.name}}
   </a>
 </div>
