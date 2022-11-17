@@ -1,0 +1,33 @@
+<!-- <h2>{{hero.name|uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name">
+  [(ngModel)是angular雙向繫結
+</div> -->
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- (click)="onSelect(onehero)" -->
+  <!-- <li *ngFor="let onehero of heros" >
+    <button type="button" [class.selected]="onehero === selectedHero">
+      <span class="badge">{{ onehero.id }}</span>
+      <span class="name">{{ onehero.name}}</span>
+    </button>
+  </li> -->
+
+  <li  *ngFor="let hero of heros">
+    <a routerLink="/detail/{{ hero.id }}">
+      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    </a>
+  </li>
+</ul>
+
+<!-- <ul class="heroes">
+  <li *ngFor="let data of datas">
+   <label>{{data.project}}</label>
+   <label>{{data.budget}}</label>
+   <img src="{{data.projectUrl}}" alt="">
+
+  </li>
+</ul> -->
+<!-- -------------------------- -->
