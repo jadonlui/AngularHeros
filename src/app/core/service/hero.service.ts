@@ -1,10 +1,10 @@
 import { MessageService } from './message.service';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Hero } from './core/mock/model/hero';
+import { HEROES } from '../mock/mock-heroes';
+import { Hero } from '../model/hero';
 // 類別屬性
 
-import { HEROES } from './mock-heroes';
 //假資料
 
 // 會註冊到root大家都可用,providedIn
