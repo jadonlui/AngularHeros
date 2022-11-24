@@ -1,10 +1,10 @@
-
-import { MessageService } from './../message.service';
-import { HeroService } from './../hero.service';
+import { HeroService } from '@app/core/services/hero.service';
+import { MessageService } from '@app/core/services/message.service';
 // import { HEROES } from './../mock-heroes';
-import { Hero } from '../hero';
-import { DATA } from './../mock-data';
 import { Component, OnInit } from '@angular/core';
+import { Hero } from 'src/app/core/model/hero';
+import { DATA } from 'src/app/core/mock/mock-data';
+
 
 @Component({
   selector: 'app-heroes',
@@ -22,7 +22,7 @@ export class HeroesComponent implements OnInit {
   // };
   constructor(
     private heroService: HeroService,
-    private messageService: MessageService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {

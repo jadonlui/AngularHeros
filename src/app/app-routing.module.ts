@@ -1,8 +1,8 @@
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { DashboardComponent } from './pages/hero/dashboard/dashboard.component';
+import { HeroDetailComponent } from './pages/hero/hero-detail/hero-detail.component';
+import { HeroesComponent } from './pages/heroes/heroes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,7 +13,7 @@ const routes: Routes = [
 //of 將物件轉成observable
 @NgModule({
   // 把我們宣告的東西註冊到路由上面
-  declarations:[],
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
