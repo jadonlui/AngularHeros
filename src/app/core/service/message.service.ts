@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 
+/**
+ * xxx-服務
+ */
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MessageService {
   messages: string[] = [];
@@ -15,5 +18,5 @@ export class MessageService {
     localStorage.removeItem('info');
   }
 
-  constructor() { }
+  constructor() {}
 }
