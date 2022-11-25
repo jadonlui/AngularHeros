@@ -2,10 +2,12 @@ import { HeroService } from '@app/core/services/hero.service';
 import { MessageService } from '@app/core/services/message.service';
 // import { HEROES } from './../mock-heroes';
 import { Component, OnInit } from '@angular/core';
-import { Hero } from 'src/app/core/model/hero';
 import { DATA } from 'src/app/core/mock/mock-data';
+import { Hero } from 'src/app/core/model/hero';
 
-
+/**
+ * 英雄之路-首頁
+ */
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -41,6 +43,7 @@ export class HeroesComponent implements OnInit {
   //   this.heros = this.heroService.getHeroes();
   //   console.log(this.heros)
   // }
+
   // 正常狀況,訂閱型給值
   getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes) => (this.heros = heroes));
