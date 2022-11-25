@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout/layout.component';
 
+/**
+ * layout連接下一個頁面的路由
+ */
 const routes: Routes = [
   {
     path: '',

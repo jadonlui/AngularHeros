@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HeroService } from '@app/core/services/hero.service';
 import { Hero } from '../../../core/model/hero';
 
+/**
+ * 英雄列表桌面
+ */
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
