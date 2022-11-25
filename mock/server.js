@@ -8,17 +8,42 @@ var db = require("./db/index");
 // middleWares
 server.use(jsonServer.bodyParser);
 server.use(middleWares);
-
+const routers = [
+  {
+    type: "get",
+    path: "/api/heroes",
+    key: "heroes",
+  },
+  {
+    type: "get",
+    path: "/api/hero/:id",
+    key: "hero",
+  },
+  {
+    type: "post",
+    path: "/api/hero",
+    key: "hero",
+  },
+];
+routers.forEach((x) => {
+  server[x.type](x.path, async function (req, res) {
+    console.log("db[x.key]", x.key);
+    console.log("db[x.key]", db[x.key]);
+    const data = await db[x.key](req, res);
+    res.status(200).json(data);
+  });
+});
 //service
 server.get("/api/test", function (req, res) {
   res.status(200).json({ success: false });
 });
-server.get("/api/heroes", function (req, res) {
-  res.status(200).json(db.heroes);
-});
-server.post("/api/hero", function (req, res) {
-  res.status(200).json(db.hero(req, res));
-});
+
+// server.get("/api/heroes", function (req, res) {
+//   res.status(200).json(db.heroes);
+// });
+// server.post("/api/hero", function (req, res) {
+//   res.status(200).json(db.hero(req, res));
+// });
 
 // Use default router
 server.use(router);

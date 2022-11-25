@@ -1,10 +1,20 @@
-const axios = require("axios");
+const { async } = require("rxjs");
+const heroes = require("./heroes");
 
-module.exports = (req, res) => {
-  // const response = await axios.get("http://localhost:3000/api/heroes");
-  // const data = await response.data;
-
+module.exports = async (req, res) => {
+  // console.log(data);
   const { id } = req.body;
+  const tempHero = await heroes(req, res);
+  console.log("heroes", tempHero);
 
-  return { id: 13, name: "Bombasto" };
+  const realHero = tempHero.find((x) => Number(x.id) === Number(id));
+  console.log("realHero",id, realHero);
+  // const lists = [];
+  // if (lists.length === 0) {
+  //   return {};,
+  // } else {
+  //   return lists.filter((d) => d.id === Number(id).flat());
+  // }
+  // console.log("req.id,data", id,data);
+  return { id: req.body.id, name: realHero.name };
 };
