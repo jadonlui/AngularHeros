@@ -25,10 +25,11 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.paramMap.get('id') ?? '';
     //問題snapshot.paramMap->?
     // 網址(:id)今天來3，那上述那個會接收到3
     this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
+    console.log(this.heroService.getHero(id).subscribe((hero) => (this.hero = hero)))
   }
 
   goBack(): void {

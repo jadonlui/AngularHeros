@@ -1,33 +1,30 @@
-import { MessageService } from './message.service';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { HEROES } from '../mock/mock-heroes';
+import { Observable } from 'rxjs';
 import { Hero } from '../model/hero';
-// 類別屬性
+import { HeroesService } from './api/heroes.service';
+import { MessageService } from './message.service';
 
-//假資料
-
-// 會註冊到root大家都可用,providedIn
+/**
+ * 英雄頁面服務
+ */
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root', //註冊到root大家都可用,providedIn
 })
 // message會共用的原因，是因為它綁定在root
 export class HeroService {
-  constructor(private messageService: MessageService) {}
+  constructor(
+    private messageService: MessageService,
+    private heroesService: HeroesService
+  ) {}
   getHeroes(): Observable<Hero[]> {
-    const heroes = of(HEROES);
     this.messageService.add('HeroService: fetched heroes');
-    return heroes;
+    return this.heroesService.getAll();
   }
 
   // 取得單一hero的值
-  getHero(id: number): Observable<Hero> {
-    //模擬http(api)的回傳值ㄝ,回傳值為Observable
-    // For now, assume that a hero with the specified `id` always exists.
-    // Error handling will be added in the next step of the tutorial.
-    const hero = HEROES.find((h) => h.id === id)!; //->為了模擬取得單筆ㄇdata
+  getHero(id: string): Observable<Hero> {
     this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(hero);
+    return this.heroesService.post(id);
   }
   // getHeroes(): Hero[] {
   //   return HEROES;
