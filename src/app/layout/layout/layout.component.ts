@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ *集合面板
+ */
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -14,4 +17,3 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {}
 }
-/** */
