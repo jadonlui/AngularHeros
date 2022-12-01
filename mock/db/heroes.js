@@ -1,3 +1,7 @@
+/**
+ *
+ * @returns 一個[{}]格式的資料
+ */
 module.exports = async (req, res) => {
   return [
     { id: 12, name: "Dr. Nice" },

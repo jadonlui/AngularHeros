@@ -16,26 +16,23 @@ export class HeroService {
     private messageService: MessageService,
     private heroesService: HeroesService
   ) {}
+
+  /**
+   * 拿到所有heroes名單
+   * 使用api資料夾中，同名api
+   */
   getHeroes(): Observable<Hero[]> {
     this.messageService.add('HeroService: fetched heroes');
     return this.heroesService.getAll();
   }
 
-  // 取得單一hero的值
+
+  /**
+   * 拿到單一的hero
+   * 使用api資料夾中，同名api
+   */
   getHero(id: string): Observable<Hero> {
     this.messageService.add(`HeroService: fetched hero id=${id}`);
     return this.heroesService.post(id);
   }
-  // getHeroes(): Hero[] {
-  //   return HEROES;
-  //   // 如果是之後應該是put api
-  // }
-
-  // getHeroes(): Observable<Hero[]> {
-  //   // 此函式模擬api回傳的資料，基本上是Observable
-  //   const heroes = of(HEROES);
-  //   this.messageService.add('HeroService: fetched heroes');
-  //   console.log("heroes",heroes)
-  //   return heroes;
-  // }
 }

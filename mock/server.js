@@ -27,8 +27,8 @@ const routers = [
 ];
 routers.forEach((x) => {
   server[x.type](x.path, async function (req, res) {
-    console.log("db[x.key]", x.key);
-    console.log("db[x.key]", db[x.key]);
+    // console.log("db[x.key]", x.key);
+    // console.log("db[x.key]", db[x.key]);
     const data = await db[x.key](req, res);
     res.status(200).json(data);
   });

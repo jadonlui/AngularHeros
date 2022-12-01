@@ -23,7 +23,9 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getHero();
   }
-
+/**
+ * 接收到id，並顯示英雄詳細資料
+ */
   getHero(): void {
     const id = this.route.snapshot.paramMap.get('id') ?? '';
     //問題snapshot.paramMap->?
