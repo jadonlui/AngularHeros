@@ -35,4 +35,7 @@ export class HeroService {
     this.messageService.add(`HeroService: fetched hero id=${id}`);
     return this.heroesService.post(id);
   }
+  gettest(): Observable<Hero[]> {
+    return this.heroesService.test();
+  }
 }

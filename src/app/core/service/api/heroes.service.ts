@@ -30,4 +30,8 @@ export class HeroesService {
   }
   /** 刪除英雄 */
   delete() {}
+
+  test():Observable<Hero[]>{
+    return this.http.get<Hero[]>('http://localhost:3000/api/heroes');
+  }
 }

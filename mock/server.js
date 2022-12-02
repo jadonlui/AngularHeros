@@ -8,14 +8,16 @@ server.use(jsonServer.bodyParser);
 server.use(middleWares);
 
 /** 測試用 */
+
 server.get("/api/test", function (req, res) {
   res.status(200).json({ status: "您好1" });
 });
 
 /** 取得英雄列表 */
-server.get("/api/heroes", function (req, res) {
-  res.status(200).json(db.heroes(req, res));
-});
+// server.get("/api/heroes", function (req, res) {
+//   res.status(200).json(db.heroes.get(req,res));
+// });
+server.get("/api/heroes", db.hero.getAll);
 
 /** 取得英雄詳細資料 */
 server.post("/api/hero", db.hero.get);

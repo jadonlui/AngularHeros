@@ -2,4 +2,5 @@
 module.exports = {
   hero: require("./hero"),
   heroes: require("./heroes"),
+  test:require('./test'),
 };

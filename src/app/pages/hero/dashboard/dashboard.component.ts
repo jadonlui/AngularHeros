@@ -23,6 +23,10 @@ export class DashboardComponent implements OnInit {
     this.heroService
       .getHeroes()
       .subscribe((heroes) => (this.heroes = heroes.slice(1, 5)));
+
+      console.log('test',this.heroService
+      .gettest()
+      .subscribe((heroes) => (this.heroes = heroes.slice(1, 5))))
     //會取2~5位的英雄
   }
 }
