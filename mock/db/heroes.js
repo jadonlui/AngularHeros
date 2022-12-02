@@ -1,8 +1,4 @@
-/**
- *
- * @returns 一個[{}]格式的資料
- */
-module.exports = async (req, res) => {
+module.exports = (req, res) => {
   return [
     { id: 12, name: "Dr. Nice" },
     { id: 13, name: "Bombasto" },
