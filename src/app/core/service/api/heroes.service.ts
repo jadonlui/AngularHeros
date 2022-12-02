@@ -24,7 +24,8 @@ export class HeroesService {
     return this.http.get<Hero[]>('http://localhost:3000/api/heroes');
   }
   /** 更新英雄 */
-  post(id: string) {
+  post(id: string): Observable<Hero>  {
+    console.log('9090')
     return this.http.post<Hero>('http://localhost:3000/api/hero', { id });
   }
   /** 刪除英雄 */

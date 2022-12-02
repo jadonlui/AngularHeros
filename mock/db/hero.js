@@ -3,9 +3,8 @@ const heroes = require("./heroes");
 
 /**
  *
- * @param {*} req
- * @param {*} res
- * @returns
+ * @param req 用post呼叫http://localhost:3000/api/hero後，所帶的值
+ * @returns 所選英雄之id與幾本資料
  */
 module.exports = async (req, res) => {
 

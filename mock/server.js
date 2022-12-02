@@ -42,6 +42,7 @@ routers.forEach((x) => {
   /**改寫get post router */
   server[x.type](x.path, async function (req, res) {
     const data = await db[x.key](req, res);
+    console.log('db[x.key]',db[x.key](req, res))
     con++;
     console.log("data123", data,con);
     res.status(200).json(data);
